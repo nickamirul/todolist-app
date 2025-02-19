@@ -81,7 +81,9 @@ const TodoList = () => {
               checked={todo.completed}
               onChange={() => handleToggleComplete(todo.id)}
               className="w-5 h-5 rounded border-gray-300 dark:border-gray-600 
-                       text-blue-500 focus:ring-blue-500"
+                       text-green-500 focus:ring-green-500 focus:ring-offset-0
+                       checked:bg-green-500 checked:border-green-500 
+                       accent-green-500"
               aria-label={`Mark ${todo.text} as ${todo.completed ? 'incomplete' : 'complete'}`}
             />
             
