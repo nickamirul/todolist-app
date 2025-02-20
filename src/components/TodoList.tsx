@@ -13,23 +13,27 @@ const TodoList = () => {
   const handleAddTodo = (e: React.FormEvent) => {
     e.preventDefault();
     if (!newTodo.trim()) return;
-    
+
     const todo: Todo = {
       id: crypto.randomUUID(),
       text: newTodo.trim(),
       completed: false,
+      number: todos.length + 1,
     };
-    
+
     setTodos([...todos, todo]);
     setNewTodo('');
   };
 
   const handleDelete = (id: string) => {
-    setTodos(todos.filter(todo => todo.id !== id));
+    setTodos(todos.filter(todo => todo.id !== id).map((todo, index) => ({
+      ...todo,
+      number: index + 1
+    })));
   };
 
   const handleToggleComplete = (id: string) => {
-    setTodos(todos.map(todo => 
+    setTodos(todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ));
   };
@@ -83,6 +87,7 @@ const TodoList = () => {
             className="flex items-center gap-2 p-3 bg-white dark:bg-gray-800 
                      rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
           >
+            <p className='text-gray-500'>{todo.number}.</p>
             <input
               type="checkbox"
               checked={todo.completed}
@@ -93,7 +98,7 @@ const TodoList = () => {
                        accent-green-500"
               aria-label={`Mark ${todo.text} as ${todo.completed ? 'incomplete' : 'complete'}`}
             />
-            
+
             {editingId === todo.id ? (
               <div className="flex flex-1 gap-2">
                 <input
