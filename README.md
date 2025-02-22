@@ -6,7 +6,7 @@ This project is a simple todo list application built with React, TypeScript, Vit
 
 ## Link to the website
 
-[Todo List](https://todolist.amirulismail.com/)
+[Todo List](https://todolist.amirulismail.com/){:target="_blank"}
 
 ## Features
 
