@@ -6,7 +6,7 @@ This project is a simple todo list application built with React, TypeScript, Vit
 
 ## Link to the website
 
-[Todo List](https://todolist.amirulismail.com/){:target="_blank"}
+<a href="https://todolist.amirulismail.com/" target="_blank" rel="noopener noreferrer">Todo List</a>
 
 ## Features
 
